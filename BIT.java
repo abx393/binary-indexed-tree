@@ -5,33 +5,37 @@ public class BIT {
 	private int[] BIT;
 	private int n;
 	
-	public BIT(int[] nums){
+	public BIT(int[] nums) {
 		this.nums = nums;
 		this.n = nums.length;
 		this.BIT = new int[n+1];
-		for (int i=0; i<n; i++){
+		for (int i = 0; i < n; i++) {
 			update(i, nums[i]);
 		}
 	}
-	public void update(int i, int amount){
+
+	public void update(int i, int amount) {
 		i++;
-		while (i<=n){
+		while (i <= n){
 			BIT[i] += amount;
-			i+= (i&-i);
+			i += (i&-i);
 		}
 	}
-	public int getSum(int i){
+
+	public int getSum(int i) {
 		int sum = 0;
 		i++;
-		while (i>0){
-			sum+= BIT[i];
-			i-= (i&-i);
+		while (i > 0) {
+			sum += BIT[i];
+			i -= (i&-i);
 		}
 		return sum;
 	}
-	public int[] bit(){
+
+	public int[] bit() {
 		return BIT;
 	}
+
 	public static void main(String[] args){
 		/*
 		int i = 5;
