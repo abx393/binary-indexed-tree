@@ -36,7 +36,7 @@ public class BIT {
 		return BIT;
 	}
 
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		/*
 		int i = 5;
 		for (int k=0; k<29; k++){
